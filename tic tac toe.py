@@ -5,7 +5,7 @@ import sqlite3
 
 db=sqlite3.connect('tictactoe.db')
 cursor=db.cursor()
-#cursor.execute('create table match_data (player1 Text,player2 Text,winner Text)')
+cursor.execute('create table match_data (player1 Text,player2 Text,winner Text)')
 def ins_data(p1,p2,win):
     cursor.execute('insert into match_data(player1,player2,winner) values(?,?,?)',(p1,p2,win))
     db.commit()
